@@ -1,0 +1,37 @@
+{
+  "name": "@deflock/postcss-math",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/deflock/postcss-math",
+  "repository": "deflock/postcss-math",
+  "main": "lib/index.js",
+  "module": "src/index.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "compile": "babel src --out-dir lib",
+    "recompile": "yarn clean && yarn compile",
+    "pretest": "yarn recompile",
+    "test": "jest",
+    "prepublishOnly": "yarn test"
+  },
+  "dependencies": {
+    "postcss": "^7.0.11",
+    "postcss-selector-parser": "^5.0.0",
+    "postcss-value-parser": "^3.3.1",
+    "reduce-css-calc": "^2.1.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.3"
+  }
+}
